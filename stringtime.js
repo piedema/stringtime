@@ -1,7 +1,7 @@
+const fs = require('fs');
+
 const ERROR = {
-
   INVALID_INPUT:'Invalid input'
-
 }
 
 const timeframes = {
@@ -17,28 +17,29 @@ const timeframes = {
   ms:1
 }
 
-module.exports.toString = function(timestamp){
+module.exports.toString = function(ms){
 
   let string = {};
+  ms = parseInt(ms);
 
-  timestamp = parseInt(timestamp);
-
-  if(!timestamp) return ERROR.INVALID_INPUT;
+  if(!ms) return ERROR.INVALID_INPUT;
 
   for(let key in timeframes){
 
-    string[key] = Math.floor(timestamp / timeframes[key]);
-
-    timestamp = timestamp - string[key] * timeframes[key];
+    let stringtime = Math.floor(ms / timeframes[key]);
+    if(stringtime > 0){
+      string[key] = stringtime;
+      ms = ms - string[key] * timeframes[key];
+    }
   }
 
   return string;
 
 }
 
-module.exports.toTimestamp = function(strings){
+module.exports.toMs = function(strings){
 
-  let timestamp = 0;
+  let ms = 0;
 
   if(Array.isArray(strings)){
 
@@ -48,7 +49,7 @@ module.exports.toTimestamp = function(strings){
 
       if(!splitted) return ERROR.INVALID_INPUT;
 
-      timestamp += splitted.t * timeframes[splitted.tf];
+      ms += splitted.t * timeframes[splitted.tf];
 
     }
 
@@ -58,10 +59,10 @@ module.exports.toTimestamp = function(strings){
 
     let splitted = stringSplit(strings);
 
-    timestamp = timeframes[splitted.tf] ? splitted.t * timeframes[splitted.tf] : false;
+    ms = timeframes[splitted.tf] ? splitted.t * timeframes[splitted.tf] : false;
   }
 
-  return timestamp;
+  return ms;
 }
 
 function stringSplit(string){

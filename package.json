@@ -2,6 +2,12 @@
   "name": "stringtime",
   "version": "1.0.1",
   "description": "module to convert stringtime to milliseconds and vice versa",
+  "keywords":[
+    "string time",
+    "milliseconds",
+    "ms",
+    "convert time"
+  ],
   "main": "stringtime.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +17,7 @@
     "url": "git+https://github.com/piedema/stringtime.git"
   },
   "author": "Peter Iedema",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/piedema/stringtime/issues"
   },

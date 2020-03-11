@@ -1,8 +1,8 @@
 {
   "name": "stringtime",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "module to convert stringtime to milliseconds and vice versa",
-  "keywords":[
+  "keywords": [
     "string time",
     "milliseconds",
     "ms",

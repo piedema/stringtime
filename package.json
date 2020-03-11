@@ -1,7 +1,7 @@
 {
   "name": "stringtime",
   "version": "1.0.0",
-  "description": "module to convert string to milliseconds and vice versa",
+  "description": "module to convert stringtime to milliseconds and vice versa",
   "main": "stringtime.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

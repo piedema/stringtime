@@ -1,7 +1,7 @@
 
 
 ### stringtime
-This module lets you convert time in milliseconds to an Object with strings (ie 4d, 14h, 7min etc) or an array with strings or string to the corresponding time in milliseconds.
+This module lets you convert time in milliseconds to an Object with time length in hours, minutes etc or an array with strings or string to the corresponding time in milliseconds.
 
 
 ### Installation
@@ -17,20 +17,16 @@ const st = require('stringtime');
 ### Getting string version of milliseconds
 ```js
 let string = st.toString(6185000);
-console.log(string);
-```
-
-```
-{ h:1, min:43, s:5 }
+console.log(string); // { h:1, min:43, s:5 }
 ```
 
 ### Getting milliseconds of string time
 ```js
-let milliseconds = st.toMs(['1s', '750ms', '3m']);
-console.log(milliseconds);
-```
-```
-181750
+let milliseconds = st.toMs(['1s', '750ms', '3min']);
+console.log(milliseconds); // 181750
+
+let milliseconds2 = st.toMs('57min');
+console.log(milliseconds); // 3420000
 ```
 
 ### Result on invalid input

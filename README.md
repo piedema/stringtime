@@ -49,7 +49,7 @@ console.log(milliseconds3); // 7025000
 Invalid input
 ```
 
-### String timeframes
+### Timeframes
 ```
 ML: Millennium
 C: Century

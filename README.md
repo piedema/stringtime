@@ -1,12 +1,12 @@
 
 
 ### stringtime
-This module lets you convert time in milliseconds to an Object with time length in hours, minutes etc or an array with strings or string to the corresponding time in milliseconds.
+This module lets you convert passed time in milliseconds to a String, Object or Array representation or vice versa.
 
 
 ### Installation
 ```
-npm install stringtime --save
+npm install stringtime
 ```
 
 ### Getting started
@@ -17,16 +17,31 @@ const st = require('stringtime');
 ### Getting string version of milliseconds
 ```js
 let string = st.toString(6185000);
-console.log(string); // { h:1, min:43, s:5 }
+console.log(string); // 1h 43min 5s
+```
+
+### Getting object version of milliseconds
+```js
+let object = st.toObject(6185000);
+console.log(object); // { h:1, min:43, s:5 }
+```
+
+### Getting array version of milliseconds
+```js
+let array = st.toArray(6185000);
+console.log(array); // [ 0, 0, 0, 0, 0, 0, 1, 43, 5, 0 ]
 ```
 
 ### Getting milliseconds of string time
 ```js
-let milliseconds = st.toMs(['1s', '750ms', '3min']);
-console.log(milliseconds); // 181750
+let milliseconds = st.toMs(['57min', '1h', '5s']);
+console.log(milliseconds); // 7025000
 
-let milliseconds2 = st.toMs('57min');
-console.log(milliseconds); // 3420000
+let milliseconds2 = st.toMs('57min 1h 5s');
+console.log(milliseconds2); // 7025000
+
+let milliseconds3 = st.toMs({ min:57, h:1, s:5 });
+console.log(milliseconds3); // 7025000
 ```
 
 ### Result on invalid input
@@ -34,9 +49,9 @@ console.log(milliseconds); // 3420000
 Invalid input
 ```
 
-### string timeframes
+### String timeframes
 ```
-ML: Millenium
+ML: Millennium
 C: Century
 DEC: Decade
 YR: Year

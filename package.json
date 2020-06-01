@@ -1,11 +1,16 @@
 {
   "name": "stringtime",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "module to convert stringtime to milliseconds and vice versa",
   "keywords": [
     "string time",
     "milliseconds",
-    "ms",
+    "ms to array",
+    "ms to object",
+    "ms to string",
+    "array to ms",
+    "object to ms",
+    "string to ms",
     "convert time"
   ],
   "main": "stringtime.js",

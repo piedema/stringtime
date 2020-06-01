@@ -29,7 +29,7 @@ console.log(object); // { h:1, min:43, s:5 }
 ### Getting array version of milliseconds
 ```js
 let array = st.toArray(6185000);
-console.log(array); // [ 0, 0, 0, 0, 0, 0, 1, 43, 5, 0 ]
+console.log(array); // [ '1h', '43min', '5s' ]
 ```
 
 ### Getting milliseconds of array, string, object

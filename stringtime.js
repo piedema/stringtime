@@ -49,7 +49,7 @@ module.exports.toObject = function(ms){
 }
 
 module.exports.toArray = function(ms){
-  let array = Array.apply(undefined, Array(10)).map(() => { return 0 })
+  let array = []
   ms = parseInt(ms);
 
   if(!ms) return ERROR.INVALID_INPUT;
@@ -59,7 +59,7 @@ module.exports.toArray = function(ms){
   for(let key in timeframes){
     let stringtime = Math.floor(ms / timeframes[key]);
     if(stringtime > 0){
-      array[timeframeIndex] = stringtime;
+      array.push(stringtime + key);
       ms = ms - stringtime * timeframes[key];
     }
     timeframeIndex++

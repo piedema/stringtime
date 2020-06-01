@@ -32,7 +32,7 @@ let array = st.toArray(6185000);
 console.log(array); // [ 0, 0, 0, 0, 0, 0, 1, 43, 5, 0 ]
 ```
 
-### Getting milliseconds of string time
+### Getting milliseconds of array, string, object
 ```js
 let milliseconds = st.toMs(['57min', '1h', '5s']);
 console.log(milliseconds); // 7025000
